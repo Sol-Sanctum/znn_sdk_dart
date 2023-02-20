@@ -57,17 +57,19 @@ class Definitions {
   ]''';
 
   static final String _htlcDefinition = '''[
-    {"type":"function","name":"CreateHtlc", "inputs":[
+    {"type":"function","name":"Create", "inputs":[
       {"name":"hashLocked","type":"address"},
       {"name":"expirationTime","type":"int64"},
       {"name":"hashType","type":"uint8"},
       {"name":"keyMaxSize","type":"uint8"},
       {"name":"hashLock","type":"bytes"}]},
-    {"type":"function","name":"ReclaimHtlc","inputs":[
+    {"type":"function","name":"Reclaim","inputs":[
       {"name":"id","type":"hash"}]},
-    {"type":"function","name":"UnlockHtlc","inputs":[
+    {"type":"function","name":"Unlock","inputs":[
       {"name":"id","type":"hash"},
-      {"name":"preimage","type":"bytes"}]}
+      {"name":"preimage","type":"bytes"}]},
+    {"type":"function","name":"DenyProxyUnlock","inputs":[]},
+    {"type":"function","name":"AllowProxyUnlock","inputs":[]}
   ]''';
 
   // Common definitions of embedded methods
