@@ -48,3 +48,16 @@ const int swapAssetDecayTimestampStart = 1645531200;
 const int swapAssetDecayEpochsOffset = 30 * 3;
 const int swapAssetDecayTickEpochs = 30;
 const int swapAssetDecayTickValuePercentage = 10;
+
+// Spork
+const int sporkNameMinLength = 5;
+const int sporkNameMaxLength = 40;
+const int sporkDescriptionMaxLength = 400;
+
+// Htlc
+const int htlcPreimageMinLength = 1;
+const int htlcPreimageMaxLength = 255;
+const int htlcPreimageDefaultLength = 32;
+const int htlcTimelockUnitSec = 60 * 60; // 1 hour
+const int htlcTimelockMinSec = htlcTimelockUnitSec * 1; // 1 hour
+const int htlcTimelockMaxSec = htlcTimelockUnitSec * 24 * 30 * 12; // ~1 year

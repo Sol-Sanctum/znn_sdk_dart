@@ -5,7 +5,7 @@ import 'package:path/path.dart' as path;
 
 export 'package:logging/logging.dart' show Level;
 
-const znnSdkVersion = '0.0.4';
+const znnSdkVersion = '0.0.5';
 const znnRootDirectory = 'znn';
 
 class ZnnPaths {

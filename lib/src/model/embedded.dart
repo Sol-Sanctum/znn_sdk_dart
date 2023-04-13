@@ -5,3 +5,5 @@ export 'embedded/plasma.dart';
 export 'embedded/sentinel.dart';
 export 'embedded/stake.dart';
 export 'embedded/swap.dart';
+export 'embedded/spork.dart';
+export 'embedded/htlc.dart';
