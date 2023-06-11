@@ -56,3 +56,15 @@ const int swapAssetDecayTimestampStart = 1645531200;
 const int swapAssetDecayEpochsOffset = 30 * 3;
 const int swapAssetDecayTickEpochs = 30;
 const int swapAssetDecayTickValuePercentage = 10;
+
+// Spork
+const int sporkNameMinLength = 5;
+const int sporkNameMaxLength = 40;
+const int sporkDescriptionMaxLength = 400;
+
+// Htlc
+const int htlcPreimageMinLength = 1;
+const int htlcPreimageMaxLength = 255;
+const int htlcPreimageDefaultLength = 32;
+const int htlcHashTypeSha3 = 0;
+const int htlcHashTypeSha256 = 1;

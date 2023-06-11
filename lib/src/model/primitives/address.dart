@@ -21,6 +21,8 @@ final Address sporkAddress =
     Address.parse('z1qxemdeddedxsp0rkxxxxxxxxxxxxxxxx956u48');
 final Address acceleratorAddress =
     Address.parse('z1qxemdeddedxaccelerat0rxxxxxxxxxxp4tk22');
+final Address htlcAddress =
+    Address.parse('z1qxemdeddedxhtlcxxxxxxxxxxxxxxxxxygecvw');
 final Address bridgeAddress =
     Address.parse('z1qxemdeddedxdrydgexxxxxxxxxxxxxxxmqgr0d');
 final Address liquidityAddress =
@@ -36,6 +38,8 @@ final List<Address> embeddedContractAddresses = [
   acceleratorAddress,
   bridgeAddress,
   liquidityAddress,
+  sporkAddress,
+  htlcAddress,
 ];
 
 class Address {
