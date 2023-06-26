@@ -1,6 +1,7 @@
 // For testing, may not keep this
 
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:znn_sdk_dart/znn_sdk_dart.dart';
 import 'dart:async';
@@ -167,12 +168,14 @@ Future<void> bridgeAllGetFunctions() async {
 
 Future<void> bridgeTest() async {
   /// Response: JSON-RPC error -32000: method not found in the abi
+  /*
   print("setRedeemDelay()");
   AccountBlockTemplate setRedeemDelay =
       znnClient.embedded.bridge.setRedeemDelay(91);
   setRedeemDelay = await znnClient.send(setRedeemDelay);
   print(setRedeemDelay.toJson());
   print("--------------");
+   */
 
   // Confirmation: https://zenonhub.io/explorer/transaction/2d4e250a003d80cff256d3351bb219b93903838e4bb14974cea4636df26f63ae
   print("wrapToken()");
@@ -197,8 +200,11 @@ Future<void> bridgeTest() async {
   // Confirmation: https://zenonhub.io/explorer/transaction/e47b5de444867049a0a577f0325103f356755ea9874675f36224358a79eee5c8
   // No errors, nothing changed?
   print("halt()");
-  AccountBlockTemplate halt = znnClient.embedded.bridge.halt(
-      "MJJIM7BYaNy/IgIC+laMnR4GDUw6dDw+lPTqziEKT+cBJSvZgshmB4kuK04uKr4oGKExQpSucqEjxqX8uYdPKwA=");
+  List<int> signature = await znnClient.defaultKeyPair!.sign(
+    Uint8List.fromList("3".codeUnits),
+  );
+  AccountBlockTemplate halt =
+      znnClient.embedded.bridge.halt(BytesUtils.bytesToHex(signature));
   halt = await znnClient.send(halt);
   print(halt.toJson());
   print("--------------");

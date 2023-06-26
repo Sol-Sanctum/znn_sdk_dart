@@ -68,3 +68,7 @@ const int htlcPreimageMaxLength = 255;
 const int htlcPreimageDefaultLength = 32;
 const int htlcHashTypeSha3 = 0;
 const int htlcHashTypeSha256 = 1;
+
+// Bridge
+const int bridgeMinGuardians = 5;
+const int bridgeMaximumFee = 10000;

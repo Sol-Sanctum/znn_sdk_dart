@@ -6,7 +6,7 @@ class HtlcInfo {
   Address timeLocked;
   Address hashLocked;
   TokenStandard tokenStandard;
-  int amount;
+  BigInt amount;
   int expirationTime;
   int hashType;
   int keyMaxSize;
@@ -28,7 +28,7 @@ class HtlcInfo {
         timeLocked = Address.parse(json['timeLocked']),
         hashLocked = Address.parse(json['hashLocked']),
         tokenStandard = TokenStandard.parse(json['tokenStandard']),
-        amount = json['amount'],
+        amount = BigInt.parse(json['amount']),
         expirationTime = json['expirationTime'],
         hashType = json['hashType'],
         keyMaxSize = json['keyMaxSize'],
@@ -39,7 +39,7 @@ class HtlcInfo {
         'timeLocked': timeLocked.toString(),
         'hashLocked': hashLocked.toString(),
         'tokenStandard': tokenStandard.toString(),
-        'amount': amount,
+        'amount': amount.toString(),
         'expirationTime': expirationTime,
         'hashType': hashType,
         'keyMaxSize': keyMaxSize,

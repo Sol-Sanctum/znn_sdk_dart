@@ -31,8 +31,8 @@ Future<void> main() async {
   print("Unlocked: ${address.toString()}");
   print("--------------");
 
-  //await liquidityAllGetFunctions(address);
-  await liquidityTest(address);
+  await liquidityAllGetFunctions(address);
+  //await liquidityTest(address);
 
   znnClient.wsClient.stop();
 }

@@ -184,6 +184,8 @@ class BridgeApi {
             .encodeFunction('UpdateWrapRequest', [id.toString(), signature]));
   }
 
+  /// Removed because it doesn't achieve anything
+
   AccountBlockTemplate halt(String signature) {
     return AccountBlockTemplate.callContract(bridgeAddress, znnZts, BigInt.zero,
         Definitions.bridge.encodeFunction('Halt', [signature]));
@@ -216,10 +218,12 @@ class BridgeApi {
 
   /// NOT IN ZNN-SDK-GO
   /// Response: JSON-RPC error -32000: method not found in the abi
+  /*
   AccountBlockTemplate setRedeemDelay(int redeemDelay) {
     return AccountBlockTemplate.callContract(bridgeAddress, znnZts, BigInt.zero,
         Definitions.bridge.encodeFunction('SetRedeemDelay', [redeemDelay]));
   }
+   */
 
   AccountBlockTemplate unwrapToken(
     int networkClass,

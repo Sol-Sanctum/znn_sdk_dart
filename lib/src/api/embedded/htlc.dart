@@ -23,12 +23,12 @@ class HtlcApi {
   }
 
   // Contract methods
-  AccountBlockTemplate create(Token token, int? amount, Address hashLocked,
+  AccountBlockTemplate create(Token token, BigInt amount, Address hashLocked,
       int expirationTime, int hashType, int keyMaxSize, List<int>? hashLock) {
     return AccountBlockTemplate.callContract(
         htlcAddress,
         token.tokenStandard,
-        amount as BigInt,
+        amount,
         Definitions.htlc.encodeFunction('Create',
             [hashLocked, expirationTime, hashType, keyMaxSize, hashLock]));
   }
