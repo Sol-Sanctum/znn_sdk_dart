@@ -90,7 +90,6 @@ class BridgeApi {
     String toAddress,
     int networkClass,
     int chainId, {
-    // mistake?? https://github.com/MoonBaZZe/znn-sdk-go/blob/master/api/embedded/bridge.go#L87
     int pageIndex = 0,
     int pageSize = rpcMaxPageSize,
   }) async {
@@ -149,7 +148,6 @@ class BridgeApi {
     return UnwrapTokenRequestList.fromJson(response!);
   }
 
-  /// NOT IN ZNN-SDK-GO
   Future<ZtsFeesInfo> getFeeTokenPair(TokenStandard zts) async {
     var response = await client
         .sendRequest('embedded.bridge.getFeeTokenPair', [zts.toString()]);
@@ -184,8 +182,6 @@ class BridgeApi {
             .encodeFunction('UpdateWrapRequest', [id.toString(), signature]));
   }
 
-  /// Removed because it doesn't achieve anything
-
   AccountBlockTemplate halt(String signature) {
     return AccountBlockTemplate.callContract(bridgeAddress, znnZts, BigInt.zero,
         Definitions.bridge.encodeFunction('Halt', [signature]));
@@ -216,15 +212,6 @@ class BridgeApi {
             .encodeFunction('Redeem', [transactionHash.toString(), logIndex]));
   }
 
-  /// NOT IN ZNN-SDK-GO
-  /// Response: JSON-RPC error -32000: method not found in the abi
-  /*
-  AccountBlockTemplate setRedeemDelay(int redeemDelay) {
-    return AccountBlockTemplate.callContract(bridgeAddress, znnZts, BigInt.zero,
-        Definitions.bridge.encodeFunction('SetRedeemDelay', [redeemDelay]));
-  }
-   */
-
   AccountBlockTemplate unwrapToken(
     int networkClass,
     int chainId,
@@ -252,7 +239,6 @@ class BridgeApi {
   }
 
   // Guardian contract methods
-  /// NOT IN ZNN-SDK-GO
   AccountBlockTemplate proposeAdministrator(Address address) {
     return AccountBlockTemplate.callContract(
         bridgeAddress,
@@ -387,7 +373,6 @@ class BridgeApi {
         Definitions.bridge.encodeFunction('SetBridgeMetadata', [metadata]));
   }
 
-  /// NOT IN ZNN-SDK-GO
   AccountBlockTemplate revokeUnwrapRequest(Hash transactionHash, int logIndex) {
     return AccountBlockTemplate.callContract(
         bridgeAddress,

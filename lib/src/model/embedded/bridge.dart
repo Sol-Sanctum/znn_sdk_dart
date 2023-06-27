@@ -1,5 +1,3 @@
-/// Note: List classes could potentially be combined with a generic type
-
 import 'package:znn_sdk_dart/znn_sdk_dart.dart';
 
 class BridgeInfo {

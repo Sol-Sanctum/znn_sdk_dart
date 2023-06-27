@@ -18,8 +18,9 @@ final BigInt sentinelRegisterZnnAmount = BigInt.from(5000 * oneZnn);
 final BigInt sentinelRegisterQsrAmount = BigInt.from(50000 * oneQsr);
 
 // Staking
-final BigInt stakeMinZnnAmount = BigInt.from(1 * oneZnn);
+final BigInt stakeMinAmount = BigInt.from(1 * oneZnn);
 final int stakeTimeUnitSec = 30 * 24 * 60 * 60;
+final int stakeTimeMinSec = 1 * stakeTimeUnitSec;
 final int stakeTimeMaxSec = 12 * stakeTimeUnitSec;
 final String stakeUnitDurationName = 'month';
 

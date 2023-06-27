@@ -55,24 +55,6 @@ class LiquidityApi {
   }
 
   // Contract methods
-  /// NOT IN ZNN-SDK-GO
-  AccountBlockTemplate fund(BigInt znnReward, BigInt qsrReward) {
-    return AccountBlockTemplate.callContract(
-        liquidityAddress,
-        znnZts,
-        BigInt.zero,
-        Definitions.liquidity.encodeFunction('Fund', [znnReward, qsrReward]));
-  }
-
-  /// NOT IN ZNN-SDK-GO
-  AccountBlockTemplate burnZnn(BigInt burnAmount) {
-    return AccountBlockTemplate.callContract(
-        liquidityAddress,
-        znnZts,
-        BigInt.zero,
-        Definitions.liquidity.encodeFunction('BurnZnn', [burnAmount]));
-  }
-
   AccountBlockTemplate liquidityStake(
       int durationInSec, BigInt amount, TokenStandard zts) {
     return AccountBlockTemplate.callContract(
@@ -123,7 +105,6 @@ class LiquidityApi {
         Definitions.liquidity.encodeFunction('NominateGuardians', [guardians]));
   }
 
-  /// NOT IN ZNN-SDK-GO
   AccountBlockTemplate proposeAdministrator(Address address) {
     return AccountBlockTemplate.callContract(
         liquidityAddress,
@@ -150,7 +131,6 @@ class LiquidityApi {
             .encodeFunction('SetAdditionalReward', [znnReward, qsrReward]));
   }
 
-  /// NOT IN ZNN-SDK-GO
   AccountBlockTemplate changeAdministrator(Address administrator) {
     return AccountBlockTemplate.callContract(
         liquidityAddress,
@@ -161,25 +141,12 @@ class LiquidityApi {
   }
 
   // Common contract methods
-  /// NOT IN ZNN-SDK-GO
-  AccountBlockTemplate update() {
-    return AccountBlockTemplate.callContract(liquidityAddress, znnZts,
-        BigInt.zero, Definitions.liquidity.encodeFunction('Update', []));
-  }
-
-  /// NOT IN ZNN-SDK-GO
-  AccountBlockTemplate donate(BigInt amount, TokenStandard tokenStandard) {
-    return AccountBlockTemplate.callContract(liquidityAddress, tokenStandard,
-        amount, Definitions.liquidity.encodeFunction('Donate', []));
-  }
-
   AccountBlockTemplate collectReward() {
     return AccountBlockTemplate.callContract(liquidityAddress, znnZts,
         BigInt.zero, Definitions.liquidity.encodeFunction('CollectReward', []));
   }
 
   // Administrator common contract methods
-  /// NOT IN ZNN-SDK-GO
   AccountBlockTemplate emergency() {
     return AccountBlockTemplate.callContract(liquidityAddress, znnZts,
         BigInt.zero, Definitions.liquidity.encodeFunction('Emergency', []));
